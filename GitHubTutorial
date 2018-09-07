@@ -1,0 +1,147 @@
+GO TO GITHUB site in Browser				
+	CREATE NEW REPO			
+	CREATE README.md file			
+	Clone with HTTPS			
+	  Address on Git Hub is:			 
+	   https://github.com/UpirGitHubAccount/AllanCLion.git			
+				
+CREATE FOLDER ON LOCAL COMPUTER				
+	START Command Line/Terminal			
+	 – change directory on local computer to new FOLDER			
+	      on my computer:  GitProjects.			
+				
+	$ cd ~/Documents/GitProjects			
+				
+	DOWNLOAD GitHub REPO using Clone Address			
+	$ git clone https://github.com/UpirGitHubAccount/AllanCLion.git			
+	" Cloning into 'AllanCLion'...
+remote: Counting objects: 3, done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+Checking connectivity... done."			
+	Change directory to new downloaded REPO on local computer			
+	YourName@cslab-l17 ~/Documents/GitProjects			
+	  $ cd AllanCLion/			
+	List the files on local computer			
+	"$ ls
+README.md"			
+				
+	Check local REPO to see if you screwed up YET			
+	"$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean"			
+				
+	Create a new File to test system, then List out REPO contents			
+	"$ echo 'HI, I am a new file' > newFile
+
+$ ls
+newFile  README.md"			
+	Examine contents of file with Linux Cat command			
+	"$ cat newFile
+HI, I am a new file"			
+				
+	  NOTE:  you can use another Text editor if you want to			
+	 $ atom newFile			
+				
+	Now Check the REPO status			
+	"$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use ""git add <file>..."" to include in what will be committed)
+        newFile
+nothing added to commit but untracked files present (use ""git add"" to track)"			
+				
+	  The REPO has an ‘UNTRACKED’ file ====> so track it with add command and STATUS			
+	"$ git add newFile
+
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use ""git reset HEAD <file>..."" to unstage)
+
+        new file:   newFile"			
+				
+	Now commit the file ===> this makes it a part of the .init DATABASE			
+	" git commit -m 'newFile first commit'
+[master d18c0ce] newFile first commit
+ Committer: Deglow <tldeglow@cslab-l17.sbcc.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name ""Your Name""
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+    git commit --amend –reset-author
+ 1 file changed, 1 insertion(+)
+ create mode 100644 newFile
+"			
+				
+	 Status command shows everything is FINE !!			
+	" git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use ""git push"" to publish your local commits)
+
+nothing to commit, working tree clean"			
+				
+	Examine the log of local REPO			
+	"$ git log
+commit a6b410716c434a009c1d653779b13e1382a7d6b3 (HEAD -> master)
+Author: Lee Smith <leesmith404@gmail.com>
+Date:   Wed Sep 5 20:24:36 2018 -0700
+
+    newFile first commit
+
+commit 6e3added5fa066ba1bf84b8dc2ced9608e1e75eb (origin/master, origin/HEAD)
+Author: WestCoast909 <tldeglow@pipeline.sbcc.edu>
+Date:   Wed Sep 5 19:56:36 2018 -0700
+
+    create README.md on 9/5/18"			
+				
+	Find where the identiry of the local REPO 			
+	" $ git remote -v
+origin  https://github.com/WestCoast909/git-Practice.git (fetch)
+origin  https://github.com/WestCoast909/git-Practice.git (push)"			
+				
+	PUSH the local REPO to current Remote			
+	 git push origin			
+	" Username for 'https://github.com': leesmith404
+Password for 'https://leesmith404@github.com': 
+Counting objects: 4, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 303 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/leesmith404/AllanCLion.git
+   6f33821..d18c0ce  master -> master
+"			
+	Now Look at your GitHub account			
+				
+	You should see that thae newfile has been uploaded to the GitHub REPO			
+				
+	SUMMARY			
+	 Make a new REPOSITORY on your gitHub account – make a README.mdfile			
+	 On your LINUX compute: Create a new FOLDER in your DOCUMENTS folder			
+		name it GitHubProjects		
+	Open Terminal in Linux			
+	$ cd ~/Documents/GitProjects			
+	Clone the GitHub REPO to your computer			
+	      Click on GREEN button to see the HTTP address 			
+		  like https://github.com/leesmith404/AllanCLion.git		
+	in Terminal			
+	$ git clone https://github.com/leesmith404/AllanCLion.git			
+	You now have this REPO on your computer			
+	Make a new file or change the existing README.md file			
+	git add .			
+	git commit -m 'new commit message'			
+	git status ##make sure there is 'nothing to be done			
+	git push origin			
+	Look at your GitHub account and you should see the new file!			
